@@ -56,7 +56,7 @@ void ui_event_Page1HomeBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         // Assuming _ui_screen_change and ui_Options_Page are defined in ui.h or elsewhere
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Options_Page_screen_init);
     }
@@ -66,7 +66,7 @@ void ui_event_Page1NextBTN1(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         // Assuming _ui_screen_change and ui_Artificial_Horizon_Page are defined
         _ui_screen_change(&ui_Artificial_Horizon_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0,
                           &ui_Artificial_Horizon_Page_screen_init);
@@ -77,7 +77,7 @@ void ui_event_Page1PrevBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         // Assuming _ui_screen_change and ui_Options_Page are defined
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Options_Page_screen_init);
     }

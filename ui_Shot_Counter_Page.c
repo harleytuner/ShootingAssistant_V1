@@ -74,7 +74,7 @@ void ui_shot_counter_decrement_shot(void) {
 void ui_event_Page3HomeBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Options_Page_screen_init);
     }
 }
@@ -82,7 +82,7 @@ void ui_event_Page3HomeBTN(lv_event_t * e)
 void ui_event_Page3PrevBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Artificial_Horizon_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0,
                           &ui_Artificial_Horizon_Page_screen_init);
     }
@@ -91,7 +91,7 @@ void ui_event_Page3PrevBTN(lv_event_t * e)
 void ui_event_Page3NextBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Stage_Timer_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Stage_Timer_Page_screen_init);
     }
 }
@@ -100,7 +100,7 @@ void ui_event_Page3NextBTN(lv_event_t * e)
 void ui_event_ShotAddButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         if (current_set_shot_count < 99) { 
             current_set_shot_count++;
         }
@@ -112,7 +112,7 @@ void ui_event_ShotAddButton(lv_event_t * e)
 void ui_event_ShotSubtractButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         if (current_set_shot_count > 0) { 
             current_set_shot_count--;
         }
@@ -125,7 +125,7 @@ void ui_event_ShotSubtractButton(lv_event_t * e)
 void ui_event_ShotResetButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         ui_shot_counter_reset_all_to_default(); // Calls the updated function
         update_shot_display_label(); // Ensure this page's label is updated
     }

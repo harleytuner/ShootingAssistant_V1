@@ -104,21 +104,21 @@ void ui_Competition_Page_update_live_data_display(void) {
 // --- Event functions for original navigation buttons ---
 void ui_event_Page5HomeBTN(lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED   ) {
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Options_Page_screen_init);
     }
 }
 
 void ui_event_Page5PrevBTN(lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED   ) {
         _ui_screen_change(&ui_Stage_Timer_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Stage_Timer_Page_screen_init);
     }
 }
 
 void ui_event_Page5NextBTN(lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED   ) {
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Options_Page_screen_init);
     }
 }
@@ -126,7 +126,7 @@ void ui_event_Page5NextBTN(lv_event_t * e) {
 // --- Event functions for new Competition Page buttons ---
 void ui_event_CompPageStartButton(lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED   ) {
         if (ui_stage_timer_is_timer_running()) {
             ui_stage_timer_pause_timer_action();
         } else {
@@ -144,7 +144,7 @@ void ui_event_CompPageStartButton(lv_event_t * e) {
 
 void ui_event_CompPageResetButton(lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED   ) {
         printf("ui_Competition_Page: Reset button pressed.\n");
         ui_stage_timer_reset_timer_to_set_time_action(); // Resets time correctly.
 

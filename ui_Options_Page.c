@@ -30,7 +30,7 @@ void ui_event_Page_1(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Bubble_Level_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Bubble_Level_Page_screen_init);
     }
 }
@@ -39,7 +39,7 @@ void ui_event_Page2(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Artificial_Horizon_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0,
                           &ui_Artificial_Horizon_Page_screen_init);
     }
@@ -49,7 +49,7 @@ void ui_event_Page3(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Shot_Counter_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Shot_Counter_Page_screen_init);
     }
 }
@@ -58,7 +58,7 @@ void ui_event_Page4(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Stage_Timer_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Stage_Timer_Page_screen_init);
     }
 }
@@ -67,7 +67,7 @@ void ui_event_Page5(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Competition_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Competition_Page_screen_init);
     }
 }

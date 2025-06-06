@@ -106,7 +106,7 @@ void ui_stage_timer_reset_timer_to_set_time_action(void) {
 void ui_event_Page4HomeBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Options_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Options_Page_screen_init);
     }
 }
@@ -114,7 +114,7 @@ void ui_event_Page4HomeBTN(lv_event_t * e)
 void ui_event_Page4PrevBTN(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Shot_Counter_Page, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Shot_Counter_Page_screen_init);
     }
 }
@@ -122,7 +122,7 @@ void ui_event_Page4PrevBTN(lv_event_t * e)
 void ui_event_Page4NextBTN(lv_event_t * e) 
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_Competition_Page, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, &ui_Competition_Page_screen_init);
     }
 }
@@ -131,7 +131,7 @@ void ui_event_Page4NextBTN(lv_event_t * e)
 void ui_event_StageTimerAddButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED && !timer_is_running) {
+    if(event_code == LV_EVENT_PRESSED && !timer_is_running) {
         if (current_set_time_seconds <= MAX_STAGE_TIME_SECONDS - TIME_ADJUST_INCREMENT_SECONDS) {
             current_set_time_seconds += TIME_ADJUST_INCREMENT_SECONDS;
         } else {
@@ -145,7 +145,7 @@ void ui_event_StageTimerAddButton(lv_event_t * e)
 void ui_event_StageTimerSubButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED && !timer_is_running) {
+    if(event_code == LV_EVENT_PRESSED && !timer_is_running) {
         if (current_set_time_seconds >= MIN_STAGE_TIME_SECONDS + TIME_ADJUST_INCREMENT_SECONDS) {
             current_set_time_seconds -= TIME_ADJUST_INCREMENT_SECONDS;
         } else {
@@ -159,7 +159,7 @@ void ui_event_StageTimerSubButton(lv_event_t * e)
 void ui_event_StageTimerResetButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         if (countdown_lv_timer) {
             lv_timer_del(countdown_lv_timer);
             countdown_lv_timer = NULL;
@@ -177,7 +177,7 @@ void ui_event_StageTimerResetButton(lv_event_t * e)
 void ui_event_StageTimerStartPauseButton(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if(event_code == LV_EVENT_RELEASED) {
+    if(event_code == LV_EVENT_PRESSED) {
         if (!timer_is_running) { 
             if (time_remaining_seconds > 0) {
                 if (countdown_lv_timer == NULL) {
