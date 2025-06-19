@@ -2,7 +2,7 @@
 #include "Arduino.h"
 #include "Display_ST7789.h"
 
-#define PWR_KEY_Input_PIN   6
+#define PWR_KEY_Input_PIN   15
 #define PWR_Control_PIN     7
 
 #define Measurement_offset 0.990476     

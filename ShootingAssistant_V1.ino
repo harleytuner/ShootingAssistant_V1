@@ -4,10 +4,10 @@
 // #include "RTC_PCF85063.h"
 #include "Gyro_QMI8658.h" // Your QMI8658 library
 #include "LVGL_Driver.h"
-// #include "PWR_Key.h"
+//#include "PWR_Key.h"
 // #include "SD_Card.h"
 // #include "LVGL_Example.h"
-// #include "BAT_Driver.h"
+//#include "BAT_Driver.h"
 // #include "Wireless.h"
 #include "ui.h" // Your main UI header from SquareLine Studio
                 // This should make ui_competition_page_handle_recoil_event() available
@@ -47,6 +47,9 @@ extern "C" float get_qmi8658_pitch_degrees() {
 
 void setup()
 {
+
+    //PWR_Init();
+
     Serial.begin(115200);
     Serial.println("Setup: Starting system initialization...");
 
